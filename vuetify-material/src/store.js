@@ -29,9 +29,6 @@ export default new Vuex.Store({
       state.drawer = payload;
     },
     SET_USER_DATA(state, login_data) {
-      console.log(
-        "Storejs: " + login_data.username + " " + login_data.access_token
-      );
       state.login_data = login_data;
       localStorage.setItem("username", login_data.username);
       localStorage.setItem("access_token", login_data.access_token);
@@ -49,9 +46,6 @@ export default new Vuex.Store({
   },
   actions: {
     login({ commit }, credentials) {
-      console.log(
-        "Login store.js: " + credentials.username + " " + credentials.password
-      );
       return axios
         .post(`http://localhost:8000/login`, credentials, {
           headers: {
