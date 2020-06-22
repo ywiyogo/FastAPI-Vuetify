@@ -19,10 +19,6 @@ from jwt import PyJWTError
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 
-
-
-
-
 # JWT
 # replace the secret key with the output of `openssl rand -hex 32`
 SECRET_KEY = "47eefvueed944c5javascript019f7fastapi336248a5d20569yongkiewiyogo"
@@ -54,6 +50,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 def verify_password(plain_password, hashed_password):
     res = pwd_context.verify(plain_password, hashed_password)
@@ -191,7 +188,7 @@ def create_profile(profile_req: schemas.ProfileCreate,
                    db: Session = Depends(get_db)):
     """ Create a profile to DB"""
     # create an object of Stock if not exist
-    
+
     profile = db.query(models.Profile).filter(
         models.Profile.email == profile_req.username).first()
     if profile:

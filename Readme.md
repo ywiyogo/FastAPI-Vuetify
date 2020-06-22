@@ -14,8 +14,7 @@ The tool can be download in https://insomnia.rest/download/. Below is an example
 	"gender": "male",
 	"name": "afvse",
 	"language": "english",
-	"height": 180,
-	"smoker": "False",
+	"membership": "trial",
 	"details": "efgsegesg sefges gse ges. afw"
 }
 ```
