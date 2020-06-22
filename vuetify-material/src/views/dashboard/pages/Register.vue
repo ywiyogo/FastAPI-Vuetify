@@ -90,9 +90,7 @@ export default {
 
   methods: {
     register() {
-      console.log("test register")
       this.$refs.form.validate();
-      console.log("test debug")
       return getAPI.post("http://localhost:8000/profile", {
           username: this.username,
           email: this.email,

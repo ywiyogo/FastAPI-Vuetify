@@ -139,8 +139,6 @@ export default {
       };
     },
     login_condition(item) {
-      console.log("test " + item.title);
-      console.log("logic " + this.$store.getters.loggedIn);
       if(item.title === "Login" && this.$store.getters.loggedIn){
         return false;
       }
