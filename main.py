@@ -51,6 +51,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+user_count=0
 
 def verify_password(plain_password, hashed_password):
     res = pwd_context.verify(plain_password, hashed_password)
@@ -124,7 +125,6 @@ async def get_current_active_user(
 async def login_for_access_token(
         form_data: OAuth2PasswordRequestForm = Depends()):
     # OAuth form data has username, but the frontend passes the email
-    print("debug2")
     user = authenticate_user(form_data.username, form_data.password)
     if not user:
         raise HTTPException(
@@ -188,24 +188,19 @@ def create_profile(profile_req: schemas.ProfileCreate,
                    db: Session = Depends(get_db)):
     """ Create a profile to DB"""
     # create an object of Stock if not exist
-
-    profile = db.query(models.Profile).filter(
-        models.Profile.email == profile_req.username).first()
-    if profile:
-        print("Username exists, please choose another username.")
-        return false
+    global user_count
     profile = db.query(models.Profile).filter(
         models.Profile.email == profile_req.email).first()
     if profile:
         print("Email exists, please choose another email.")
-        return false
+        return False
     # create a new profile
     profile = models.Profile()
-    profile.username = profile_req.username
+    profile.username = "user"+str(user_count)
+    user_count=user_count+1
     hashed_password = get_password_hash(profile_req.password)
     profile.hashed_passwd = hashed_password
     profile.email = profile_req.email
-    profile.gender = profile_req.gender
     # add to db
     db.add(profile)
     db.commit()

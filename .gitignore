@@ -21,7 +21,9 @@ yarn-error.log*
 *.sw*
 
 .vscode/
-
+.venv
 __pycache__/
 
 profiles.db
+
+nginx-fastapi.conf

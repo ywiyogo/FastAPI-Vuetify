@@ -32,10 +32,9 @@ membership_enum = Enum(Membership, name="membership", create_type=False)
 class Profile(Base):
     __tablename__ = "profiles"
 
-    username = Column(String(50), primary_key=True, index=True)
-    email = Column(String, unique=True, index=True)
+    email = Column(String(50), primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
     hashed_passwd = Column(String)
-    gender = Column(gender_enum)
     details = Column(String(500))
     language = Column(language_enum)
     height = Column(Integer)

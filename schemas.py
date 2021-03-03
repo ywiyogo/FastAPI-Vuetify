@@ -9,7 +9,6 @@ class Login(BaseModel):
 
 
 class ProfileBase(BaseModel):
-    username: str
     email: str
 
     class Config:
@@ -18,7 +17,7 @@ class ProfileBase(BaseModel):
 
 class ProfileCreate(ProfileBase):
     password: str
-    gender: str
+
 
 
 class ProfileUpdate(ProfileCreate):

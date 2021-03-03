@@ -12,6 +12,10 @@ Installing the Vue.js library using `npm`:
 
     npm install vue
 
+Installing `sqlitebrowser` for showing the SQLlite database entries:
+
+    sudo apt install sqlitebrowser
+
 Starting the FastAPI server with:
 
     uvicorn main:app --reload
