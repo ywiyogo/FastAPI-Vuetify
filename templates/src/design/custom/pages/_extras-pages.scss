@@ -1,0 +1,24 @@
+// 
+// Extras pages.scss
+//
+
+
+// pricing
+
+
+.plan-box{
+    .plan-btn{
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: $gray-300;
+            left: 0px;
+            right: 0px;
+            top: 12px;
+        }
+    }
+}

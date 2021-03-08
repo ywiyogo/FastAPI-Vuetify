@@ -1,0 +1,86 @@
+// 
+// timeline.scss
+//
+
+/************** Horizontal timeline **************/ 
+
+
+.hori-timeline{
+    .events{
+        .event-list{
+            text-align: center;
+            display: block;
+            &:hover{
+                .up-arrow-icon{
+                    animation: fade-up 1.5s infinite linear;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1140px) {
+    .hori-timeline{
+        .events{
+            .event-list{
+                width: 24%;
+                margin: 0px;
+                display: inline-block;
+
+                .event-up-icon{
+                    position: relative;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        top: 16px;
+                        left: 0;
+                        right: 0;
+                        border-bottom: 3px dashed $gray-300;
+                    }
+                    .up-arrow-icon{
+                        position: relative;
+                        background-color: $card-bg;
+                        padding: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/************** vertical timeline **************/ 
+
+.verti-timeline{
+    border-left: 3px dashed $gray-300;
+    margin: 0 10px;
+    .event-list{
+        position: relative;
+        padding: 0px 0px 40px 30px;
+
+        .event-timeline-dot{
+            position: absolute;
+            left: -9px;
+            top: 0px;
+            z-index: 9;
+            font-size: 16px;
+        }
+        .event-content{
+            position: relative;
+            border: 2px solid $border-color;
+            border-radius: 7px;
+        }
+
+        &.active{
+            .event-timeline-dot{
+                color: $primary;
+            }
+        }
+
+        &:last-child{
+            padding-bottom: 0px;
+        }
+    }
+}

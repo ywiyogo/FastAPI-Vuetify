@@ -1,0 +1,92 @@
+.section-topbox {
+    h1 {
+        //@include heading-font;
+        font-size: 24px;
+        text-transform: capitalize;
+        font-weight: 700;
+        color: $base-color;
+    }
+
+    h2 {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $base-color;
+    }
+
+    .topbox-items {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: $base-color;
+        font-size: 14px;
+
+        .items-overview {
+            i {
+                font-size: 26px;
+                vertical-align: middle;
+                color: $base-color;
+            }
+        }
+
+        .btn {
+            font-size: 12px;
+        }
+
+        .btn:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+
+        // order
+        .items-order-add {
+            background-color: $base-color;
+        
+            .btn {
+                color: $color-white;
+            }
+        }
+
+        .btn-drop {
+            .btn-secondary {
+                background-color: $color-white;
+                color: $base-color!important;
+                border: $color-white;
+            }
+        }
+    }
+
+    &.alter {
+        .topbox-items {
+            justify-content: flex-start;
+        }
+    }
+
+    .router-link-active {
+        position: relative;
+
+        i {
+            position: absolute;
+
+            &:before {
+                font-weight: 700!important;
+                color: $base-color;
+            }
+        }
+
+        h6 {
+            margin-left: 15px;
+            color: $base-color;
+        }
+    }
+}
+
+// dropdown box
+.cdrbox {
+    min-width: 300px;
+    border: 0;
+
+    p {
+        font-size: 14px;
+    }
+}

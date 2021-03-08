@@ -1,0 +1,31 @@
+// 
+// _progress.scss
+// 
+
+// Progress height small
+.progress-sm {
+  height: 5px;
+}
+
+
+// Progress height medium
+.progress-md {
+  height: 8px;
+}
+
+
+// Progress height large
+.progress-lg {
+  height: 12px;
+}
+
+.custom-progess{
+  position: relative;
+  .progress-icon{
+      position: absolute;
+      top: -12px;
+      .avatar-title{
+        background: $card-bg;
+      }
+  }
+}

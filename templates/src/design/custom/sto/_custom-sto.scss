@@ -1,0 +1,12 @@
+body {
+    background-color: $color-teal;
+}
+
+.app-search--top {
+    padding: 0px;
+
+    .form-control {
+        border-radius: 5px;
+        background-color: $color-white;
+    }
+}
