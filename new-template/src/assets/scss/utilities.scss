@@ -1,0 +1,74 @@
+// Gray color utilities
+@each $number, $color in $grays{
+    .color-gray-#{$number}{
+        color:$color;
+    }
+    .bg-gray-#{$number}{
+        color:color-contrast($color);
+        background-color: $color !important;
+    }
+    .hover-bg-gray-#{$number}{
+        &:hover{
+            color:color-contrast($color);
+            background-color: $color;
+        }
+    }
+
+    @include define-fill-color(gray-#{$number}, $color);
+    @include define-stroke-color(gray-#{$number}, $color);
+}
+
+// Light backgrounds
+@each $name, $color in $theme-colors-light{
+    .bg-#{$name}-light{
+        background-color: $color !important;
+    }
+    .text-#{$name}-light{
+        color:color-contrast($color) !important;
+    }
+}
+
+// Svg colors
+@each $name, $color in $theme-colors{
+    @include define-fill-color($name, $color);
+    @include define-stroke-color($name, $color);
+}
+
+
+
+
+// Font sizing utilities
+.font-size-50{
+    font-size: $font-size-base * 0.5;
+}
+.font-size-75{
+    font-size: $font-size-base * 0.75;
+}
+.font-size-100{
+    font-size: $font-size-base * 1;
+}
+.font-size-125{
+    font-size: $font-size-base * 1.25;
+}
+.font-size-150{
+    font-size: $font-size-base * 1.5;
+}
+.font-size-200{
+    font-size: $font-size-base * 2;
+}
+
+// Cursor utilities
+.cursor-pointer{
+    cursor:pointer;
+}
+
+// Outline control
+.outline-none{
+    outline:none!important;
+}
+
+// For svgs
+.stroke-current{
+    stroke:currentColor;
+}
+

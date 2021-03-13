@@ -1,0 +1,168 @@
+.input-container{
+    margin-bottom: map_get($spacers, 3);
+}
+
+.input {
+
+    &.error {
+        border-color: $danger;
+
+        &:focus{
+            box-shadow: $input-btn-focus-shadow-dimensions rgba($danger, $input-btn-focus-color-opacity);
+        }
+    }
+
+    &.valid {
+        border-color: $success;
+
+        &:focus{
+            box-shadow: $input-btn-focus-shadow-dimensions rgba($success, $input-btn-focus-color-opacity);
+        }
+    }
+
+    &.blank {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        border-radius: 0px;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.input-label {
+    font-size: $font-size-sm;
+    margin-bottom: $label-margin-bottom;
+
+    label {
+        margin: 0;
+    }
+}
+
+
+.input-error,
+.input-info {
+    margin-top: 0.25rem;
+    font-size: $font-size-base*0.75;
+}
+
+.input-error {
+    color: $danger;
+}
+
+// Wrapper for input component, used to structure input group add-ons, buttons
+.input-group {
+    .input-group-prepend, .input-group-append {
+        .input-group-text {
+        }
+    }
+}
+
+.tag-input {
+
+    word-break: break-word;
+    cursor: text;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    height: auto;
+    transition: $input-transition;
+
+    &.focused {
+        border-color: $input-focus-border-color;
+        outline: 0;
+        box-shadow: $input-focus-box-shadow;
+    }
+
+    .tag {
+        background: $tag-input-tag-bg;
+        color: color-contrast($tag-input-tag-bg);
+        padding: 4px 10px;
+        margin-right: 6px;
+        margin-bottom: 3px;
+        margin-top: 3px;
+        cursor: pointer;
+        border-radius: $tag-input-tag-border-radius;
+        font-size: 0.8125rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+
+        .tag-close {
+            font-size: $tag-input-close-size;
+            margin-left: 5px;
+            width: $tag-input-close-size + 0.25rem;
+            height: $tag-input-close-size + 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .tag-text {
+            line-height: 1.25rem;
+        }
+
+        // Tag variations
+        @each $type, $color in $theme-colors {
+            &.tag-#{$type} {
+                background: $color;
+                color: color-contrast($color);
+
+                .tag-close {
+                    background: change_color($color, $lightness: 30%);
+                }
+            }
+        }
+    }
+
+    .input {
+        background: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        flex-grow: 1;
+    }
+}
+
+// Styled select dropdown
+.select-dropdown {
+
+    // Remove tabindex outline
+    .dropdown {
+        outline: none;
+    }
+
+    .dropdown-menu {
+        overflow: auto;
+        max-height: 200px;
+        user-select: none;
+    }
+
+    .select-dropdown-placeholder {
+        user-select: none;
+    }
+
+    .select-dropdown-handle {
+        color: $gray-500;
+        transition: $transition-base;
+        margin-left: 0.5rem;
+    }
+
+    &.menu-open {
+        .select-dropdown-handle {
+            transform: rotate(180deg);
+        }
+    }
+
+}
+
+// switch styles
+.switch {
+    .checkbox-label-text {
+        font-size: $font-size-sm;
+    }
+}

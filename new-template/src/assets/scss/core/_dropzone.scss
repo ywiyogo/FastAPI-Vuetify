@@ -1,0 +1,17 @@
+$dropzone-bg: $primary;
+
+
+.dropzone{
+    position: relative;
+    border: 2px dashed $dropzone-bg;
+    background: change-color($dropzone-bg, $lightness:95%);
+
+    &:active, &.active{
+        background: change-color($dropzone-bg, $lightness:90%);
+    }
+
+    // Hide file input and make it occupy entire width
+    input[type='file']{
+        display: none;
+    }
+}

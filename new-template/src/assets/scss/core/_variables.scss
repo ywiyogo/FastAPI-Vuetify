@@ -1,0 +1,325 @@
+/**
+EnzymeUI bootstrap variable overrides.
+Must be loaded after bootstrap variables file.
+ */
+
+// Colors
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$grays: (
+        "100": $gray-100,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "900": $gray-900
+);
+
+$blue: #359ee3;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$colors: (
+        "blue":       $blue,
+        "indigo":     $indigo,
+        "purple":     $purple,
+        "pink":       $pink,
+        "red":        $red,
+        "orange":     $orange,
+        "yellow":     $yellow,
+        "green":      $green,
+        "teal":       $teal,
+        "cyan":       $cyan,
+        "white":      $white,
+        "gray":       $gray-600,
+        "gray-dark":  $gray-800
+);
+
+$default: #3a4146;
+$primary:       #703B9D;
+$secondary:     #F2522E;
+$success:       $green;
+$info:          $cyan;
+$warning: #ffcb49;
+$danger:        #fe346e;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$theme-colors: (
+        "default":    $default,
+        "primary":    $primary,
+        "secondary":  $secondary,
+        "success":    $success,
+        "info":       $info,
+        "warning":    $warning,
+        "danger":     $danger,
+        "light":      $light,
+        "dark":       $dark
+);
+
+// Light shades
+$theme-colors-light: (
+        "default":    change_color($default, $lightness:85%),
+        "primary":    change_color($primary, $lightness:85%),
+        "secondary":  change_color($secondary, $lightness:85%),
+        "success":    change_color($success, $lightness:85%),
+        "info":       change_color($info, $lightness:85%),
+        "warning":    change_color($warning, $lightness:85%),
+        "danger":     change_color($danger, $lightness:85%),
+        "light":      change_color($light, $lightness:85%),
+        "dark":       change_color($dark, $lightness:85%),
+);
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+        0: 0,
+        1: $spacer / 4,
+        2: $spacer / 2,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 3,
+);
+
+
+//  Fonts
+$font-size-base:              1rem; // Assumes the browser default, typically `16px`
+
+
+// Contrast - back to v4.5
+$min-contrast-ratio:   3;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg:                   #f2f2f2;
+$body-bg:                   $white !default;
+$body-color:                $gray-900 !default;
+$body-text-align:           null !default;
+
+
+// Z-index
+$zindex-app-container: 10;
+$zindex-sidebar: 1030; // Should be less than modal
+$zindex-sidebar-overlay: 1029; // Should be less than sidebar normal
+$zindex-toasts: 9001;
+
+
+// Navbar
+$navbar-bg-color:#fff; //rgba(255,255,255,0.5);
+$navbar-border-color:#edeff3;
+$navbar-height:60px;
+$navbar-padding: 0.5rem 1rem;
+
+
+// Content and navbar paddings (Space between sidebar)
+$navbar-content-padding:1.5rem;
+
+
+// Tag input
+$tag-input-tag-bg:$primary;
+$tag-input-tag-border-radius:4px;
+$tag-input-close-size:0.75rem;
+
+
+// Checkbox Switch
+$switch-bg:$primary;
+
+
+// Checkbox
+$checkbox-color:$primary;
+$checkbox-tick-transition: 0.1s ease-in-out;
+$checkbox-size:1.25rem; // Must be in rem
+$checkbox-border-radius:4px;
+$checkbox-text-margin:0.35rem;
+
+
+// Sidebar
+
+$sidebar-width:250px;
+$sidebar-background:#fff;
+$sidebar-color:#444;
+
+$sidebar-item-padding: 0px;
+
+$sidebar-link-padding: 0.75rem 1.5rem;
+$sidebar-link-active-bg: $primary;
+$sidebar-link-hover-bg: change_color($sidebar-link-active-bg, $lightness:90%);
+$sidebar-link-border-radius: 0rem;
+$sidebar-link-font-weight: 700;
+
+
+// Cards
+$card-box-shadow:                   rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+$card-header-bg: #fdfdfc;
+
+
+// Dropdown
+$dropdown-padding-y:                0;
+
+$dropdown-divider-margin-y:         0;
+
+$dropdown-item-padding-y:           .25rem;
+$dropdown-item-padding-x:           1.5rem;
+
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175);
+
+$dropdown-header-padding:           map_get($spacers, 2) $dropdown-item-padding-x;
+
+// Dropdown menu custom sizes
+$dropdown-menu-sizes: (
+        'lg': 430px,
+        'md': 300px,
+        'sm': 200px,
+        'xs': 160px,
+);
+
+
+// Navs
+$nav-tabs-link-hover-bg-color:      $gray-100;
+$nav-tabs-border-color:             $gray-300;
+$nav-tabs-border-width:             1px;
+
+$nav-content-border:$nav-tabs-border-width solid $nav-tabs-border-color;
+
+
+// Tooltip
+$tooltip-box-shadow: 0px 0px 4px -2px #444;
+
+
+// Toasts
+$toast-container-width:             calc(350px + map-get($spacers, 2) * 2);
+$toast-container-padding:           map-get($spacers, 2);
+
+$toast-border-left-width:           7px;
+
+$toast-header-color:                $gray-800;
+$toast-header-background-color:     rgba($white, .85);
+$toast-header-border-color:         rgba(0, 0, 0, .05);
+$toast-header-font-size:            $font-size-base;
+
+
+// Cards
+$card-spacer-y:                     1rem;
+$card-spacer-x:                     1.5rem;
+$card-cap-padding-y:                $card-spacer-y;
+$card-cap-padding-x:                $card-spacer-x;
+
+
+// Components
+$border-width:                1px !default;
+$border-widths: (
+        0: 0,
+        1: 1px,
+        2: 2px,
+        3: 3px,
+        4: 4px,
+        5: 5px
+) !default;
+
+$border-color:                $gray-300 !default;
+
+$border-radius:               .4rem;
+$border-radius-lg:            .5rem;
+$border-radius-sm:            .6rem;
+
+$component-active-bg:         $primary;
+
+
+// Links
+$link-decoration:                         none;
+$link-hover-decoration:                   underline;
+
+
+// Buttons + Forms
+$input-btn-padding-y:         .4rem;
+$input-btn-padding-x:         1.1rem;
+$input-btn-font-family:       null;
+$input-btn-font-size:         0.875rem;
+
+$input-btn-focus-width:       0.15rem;
+$input-btn-focus-color-opacity: .25;
+$input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity);
+$input-btn-focus-shadow-dimensions: 0 0 0 $input-btn-focus-width;
+$input-btn-focus-box-shadow:    $input-btn-focus-shadow-dimensions $input-btn-focus-color;
+
+
+$input-btn-padding-y-sm:      .2rem;
+$input-btn-padding-x-sm:      .75rem;
+$input-btn-font-size-sm:      0.75rem;
+
+$input-btn-padding-y-lg:      0.5rem;
+$input-btn-padding-x-lg:      1rem;
+$input-btn-font-size-lg:      1.125rem;
+
+
+// Forms
+$label-margin-bottom:                   .5rem;
+$input-group-addon-bg:                  transparent;
+
+
+// Breadcrumbs
+$breadcrumb-divider:                none;
+$breadcrumb-font-size:              0.875rem;
+$breadcrumb-padding-y:              .25rem;
+$breadcrumb-padding-x:              0.75rem;
+
+
+// Tables
+$table-cell-padding-y:        .75rem;
+$table-cell-padding-x:        .75rem;
+$table-cell-padding-y-sm:     .3rem;
+$table-cell-padding-x-sm:     .3rem;
+
+$table-border-factor:         .1;
+$table-border-width:          $border-width;
+$table-border-color:          $border-color;
+
+$table-group-separator-color: $table-border-color;
+
+
+// Tooltips
+$tooltip-color:                     #444;
+$tooltip-bg:                        $gray-100;
+
+$tooltip-padding-y:                 .25rem;
+$tooltip-padding-x:                 .5rem;
+
+$tooltip-box-shadow: 0px 0px 4px -2px #444;
+
+
+// Alerts
+$alert-padding-y:                   $spacer*0.75;
+$alert-padding-x:                   $spacer;
+$alert-border-radius: 0.4rem;
+
+
+// Accordion
+$accordion-padding-y:                     1rem !default;
+$accordion-padding-x:                     1.25rem !default;
+$accordion-color:                         $body-color !default;
+$accordion-bg:                            transparent !default;
+$accordion-border-width:                  $border-width !default;
+$accordion-border-color:                  rgba($black, .125) !default;
+$accordion-border-radius:                 $border-radius !default;

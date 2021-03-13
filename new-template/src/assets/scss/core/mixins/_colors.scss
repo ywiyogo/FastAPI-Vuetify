@@ -1,0 +1,11 @@
+// Some svg class making helpers
+@mixin define-fill-color($class, $color){
+    .fill-#{$class}{
+        fill:$color;
+    }
+}
+@mixin define-stroke-color($class, $color){
+    .stroke-#{$class}{
+        stroke:$color;
+    }
+}
