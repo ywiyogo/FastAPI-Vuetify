@@ -1,0 +1,60 @@
+.btn{
+
+    transition: $transition-base !important;
+    letter-spacing: 0.8px;
+    font-weight: bold;
+
+    // Icons spacing
+    svg{
+        margin-right: 6px;
+        margin-left: 6px;
+    }
+
+    &.rounded{
+        border-radius: 25px !important;
+    }
+
+    &.still{
+        &:hover{
+            transform: translateY(0px);
+        }
+
+        &:active{
+            transform: translateY(0px);
+        }
+    }
+
+    &.edgy{
+        border-radius: 0px;
+    }
+
+
+}
+
+
+@each $key, $val in $theme-colors{
+    &.btn-outline-light-bg-#{$key}{
+        background-color: change_color($val, $lightness:95%);
+        color:$val;
+        border-color:$val;
+
+        &:active, &:hover, &:focus{
+            background: $val;
+            color:color-contrast($val);
+        }
+
+        &:focus{
+            box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-contrast($val), $val, 15%), .5);
+        }
+    }
+}
+
+// Remove box shadow for outline
+@each $key, $val in $theme-colors{
+    .btn-outline-#{$key}{
+        &:focus{
+            background: $val;
+            color:color-contrast($val);
+        }
+    }
+}

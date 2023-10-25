@@ -1,0 +1,22 @@
+.alert{
+
+    // display flex allows us to add custom html content in alerts and still be able to display close button nicely
+    display: flex;
+    flex-direction: row;
+
+    border-radius:0;
+    border-top-right-radius: $alert-border-radius;
+    border-bottom-right-radius: $alert-border-radius;
+    border-left-width: 0.5rem;
+
+    // Expand content to full width - close button
+    .content{
+        flex-grow:1;
+        align-self: center;
+    }
+
+    // Disable outline on click
+    .close{
+        outline:none;
+    }
+}

@@ -1,0 +1,69 @@
+.nav{
+    .nav-item{
+        .nav-link{
+            cursor: pointer;
+            border-color: $nav-tabs-border-color;
+
+            &:hover{
+                background-color: $nav-tabs-link-hover-bg-color;
+            }
+
+            &.active{
+                color: $nav-tabs-link-active-color;
+                background-color: $nav-tabs-link-active-bg;
+                border-color: $nav-tabs-border-color;
+            }
+        }
+    }
+
+    &.nav-tabs{
+        .nav-item{
+            .nav-link.active{
+                background-color: $gray-200;
+                border-color: $gray-200;
+            }
+        }
+    }
+}
+
+.nav-content{
+    background: $card-bg;
+    padding: $nav-link-padding-x;
+    border: $nav-content-border;
+    border-top:none;
+    @include border-bottom-radius($nav-tabs-border-radius);
+}
+
+.nav-column{
+    display: flex;
+    flex-direction: row;
+    .nav-tabs{
+        // Disable border on column tabs, but we can not set it to 0
+        // as border-width size gap appears at the bottom between .nav-content and .nav-tabs
+        border-color: transparent;
+    }
+    .nav{
+        .nav-item{
+            .nav-link{
+                border-radius: 0;
+                border-right-color: transparent;
+            }
+
+            &:last-child{
+                .nav-link {
+                    border-bottom-left-radius: $nav-tabs-border-radius;
+                }
+            }
+            &:first-child{
+                .nav-link {
+                    border-top-left-radius: $nav-tabs-border-radius;
+                }
+            }
+        }
+    }
+    .nav-content{
+        flex-grow: 1;
+        border: $nav-content-border;
+        border-bottom-left-radius: 0px;
+    }
+}

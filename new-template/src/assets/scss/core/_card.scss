@@ -1,0 +1,11 @@
+.card{
+    //box-shadow: 2px 2px 5px -2px #9e9c94;
+    box-shadow: $card-box-shadow;
+    .card-header{
+        font-weight: bold;
+        font-size: $font-size-base*1.25;
+        background: $card-header-bg;
+    }
+}
+
+

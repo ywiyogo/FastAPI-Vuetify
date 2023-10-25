@@ -1,0 +1,13 @@
+.hover-underline{
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.hover-font-bold{
+    &:hover{
+        font-weight: bold;
+    }
+}
+
+

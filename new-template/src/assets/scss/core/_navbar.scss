@@ -1,0 +1,17 @@
+.navigation-bar {
+    margin-bottom: 15px;
+    border-bottom: 1px solid $navbar-border-color;
+    background-color: $navbar-bg-color;
+    height: $navbar-height;
+    //padding: $navbar-padding 0;
+    padding-right: $navbar-content-padding;
+    padding-left: $navbar-content-padding;
+
+    .menu-toggle{
+        font-size: 1.5rem;
+        //color:$gray-800;
+        color:$primary;
+        cursor: pointer;
+    }
+
+}

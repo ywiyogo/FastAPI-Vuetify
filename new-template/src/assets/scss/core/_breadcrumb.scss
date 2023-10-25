@@ -1,0 +1,29 @@
+.breadcrumb{
+    .breadcrumb-item{
+
+        .breadcrumb-link{
+            display: flex;
+            align-items: center;
+
+            .breadcrumb-divider{
+                // Set to inherit color from current scope
+                stroke:currentColor;
+            }
+        }
+
+        &:hover{
+            // Hover styles for item
+        }
+
+        &:last-child{
+            // Additional last child styles if needed
+        }
+
+        &.active{
+            .breadcrumb-link{
+                font-weight: 700;
+            }
+        }
+
+    }
+}

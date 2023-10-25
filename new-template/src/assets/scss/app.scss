@@ -1,0 +1,122 @@
+// Loading fonts
+@font-face {
+    font-family: 'NunitoSans';
+    src: url("./../fonts/NunitoSans-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'NunitoSans';
+    src: url("./../fonts/NunitoSans-Bold.ttf");
+    font-style: normal;
+    font-weight: bold;
+}
+
+*{
+    font-family: 'NunitoSans';
+}
+
+// Scrollbar
+$scrollbar-border-radius:5px;
+$scrollbar-bg-color: #9b9b9b;
+$scrollbar-size:0.6rem;
+::-webkit-scrollbar {
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+    background-color: transparent;
+    border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $scrollbar-bg-color;
+    border-radius: $scrollbar-border-radius;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: $scrollbar-border-radius;
+    background: change_color($scrollbar-bg-color, $lightness:90%);
+}
+
+// For Internet Explorer
+*{
+    scrollbar-face-color: $scrollbar-bg-color;
+    scrollbar-track-color: $scrollbar-bg-color;
+}
+
+#app{
+    height: 100vh;
+}
+
+// Custom modified Bootstrap and new variables
+@import "./core/variables";
+
+// Bootstrap library
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
+
+// Custom library
+@import "core/mixins/loadmixins";
+@import "core/accordion";
+@import "core/sidebar";
+@import "core/navbar";
+@import "core/buttons";
+@import "core/inputs";
+@import "core/checkbox";
+@import "core/radio";
+@import "core/card";
+@import "core/main-container";
+@import "core/alert";
+@import "core/dropdown";
+@import "core/pagination";
+@import "core/progress";
+@import "core/nav";
+@import "core/badge";
+@import "core/breadcrumb";
+@import "core/tooltip";
+@import "core/toasts";
+@import "core/datatables";
+@import "core/modal";
+@import "core/dropzone";
+@import "core/hover-utilities";
+// Custom utilities
+@import "utilities";
+
+// Adding grays to root for usage in css
+:root{
+    @each $name, $color in $grays{
+        --gray-#{$name}: #{$color};
+    }
+}

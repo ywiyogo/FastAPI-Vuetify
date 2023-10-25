@@ -1,0 +1,53 @@
+$to-lighten:50%;
+
+// Inverse badges styles
+.badge{
+    @each $type, $color in $theme-colors{
+        $lightness: lightness($color);
+        &.bg-#{$type}{
+            &.badge-inverse{
+                $bg:null;
+                $color:$color;
+                $bg_h:null;
+                $color_h:null;
+
+                @if $lightness >= 50% and $lightness <= 90{
+                    $a: 30% + $lightness % 100;
+                    $b: $to-lighten / 3;
+                    @if($a > $b){
+                        $a: $b;
+                    }
+                    $bg: lighten($color, $a);
+                    $color:darken($color, 30%);
+                    $bg_h: darken(lighten($color, $a), 10%);
+                    $color_h:darken($color, 30%);
+                }
+                @else if $lightness >= 90{
+                    background: darken($color, $to-lighten/3);
+                    color:lighten($color, 30%);
+                    &:hover{
+                        background: darken($color, $to-lighten/2);
+                    }
+
+                    $bg: darken($color, $to-lighten/3);
+                    $color:lighten($color, 30%);
+                    $bg_h: darken($color, $to-lighten/2);
+                }
+                @else{
+                    $bg: lighten($color, $to-lighten);
+                    $bg_h: lighten($color, $to-lighten/1.25);
+                }
+
+                background: $bg!important;
+                color:$color;
+
+                &:hover{
+                    background: $bg_h !important;
+                    @if($color_h != null){
+                        color: $color_h !important;
+                    }
+                }
+            }
+        }
+    }
+}

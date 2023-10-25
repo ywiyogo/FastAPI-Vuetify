@@ -1,0 +1,17 @@
+.tooltip{
+    z-index: $zindex-tooltip;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .tooltip-inner {
+        max-width: $tooltip-max-width;
+        padding: $tooltip-padding-y $tooltip-padding-x;
+        color: $tooltip-color;
+        text-align: center;
+        background-color: $tooltip-bg;
+        @include border-radius($tooltip-border-radius);
+        box-shadow: $tooltip-box-shadow;
+    }
+}

@@ -1,0 +1,18 @@
+.progress{
+
+    .progress-bar{
+        transition: $progress-bar-transition;
+        border-radius: $progress-border-radius;
+    }
+
+    @each $key, $val in $theme-colors{
+
+        &.progress-#{$key}{
+            .progress-bar{
+                background-color: #{$val};
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,96 @@
+.toast-notifications-container{
+    position: fixed;
+    z-index: $zindex-toasts;
+    width: $toast-container-width;
+
+    &.top-left{
+        top:$toast-container-padding;
+        left:$toast-container-padding;
+    }
+    &.top-right{
+        top:$toast-container-padding;
+        right:$toast-container-padding;
+    }
+    &.top-center{
+        top:$toast-container-padding;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    &.bottom-left{
+        bottom:$toast-container-padding;
+        left:$toast-container-padding;
+    }
+    &.bottom-right{
+        bottom:$toast-container-padding;
+        right:$toast-container-padding;
+    }
+    &.bottom-center{
+        bottom:$toast-container-padding;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+.toast {
+    max-width: 100%;
+    width: $toast-max-width;
+    overflow: hidden; // cheap rounded corners on nested items
+    @include font-size($toast-font-size);
+    color: $toast-color;
+    background-color: $toast-background-color;
+    background-clip: padding-box;
+    //border: $toast-border-width solid $toast-border-color;
+    box-shadow: $toast-box-shadow;
+    //backdrop-filter: blur(10px);
+    //opacity: 0;
+    @include border-radius($toast-border-radius);
+
+    &:not(:last-child) {
+        margin-bottom: $toast-padding-x;
+    }
+
+    &.showing {
+        opacity: 1;
+    }
+
+    &.show {
+        display: block;
+        opacity: 1;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    // Hider borders so left border does not look weird
+    border:none;
+    @each $name, $color in $theme-colors{
+        &.toast-#{$name}{
+            border-left:#{$toast-border-left-width} solid #{$color}
+        }
+    }
+
+    .close{
+        outline: none;
+    }
+}
+
+.toast-header {
+    display: flex;
+    align-items: center;
+    padding: $toast-padding-y $toast-padding-x;
+    padding-bottom:0;
+    color: $toast-header-color;
+    //background-color: $toast-header-background-color;
+    background-clip: padding-box;
+    //border-bottom: $toast-border-width solid $toast-header-border-color;
+    border:none;
+    font-size:$toast-header-font-size;
+}
+
+.toast-body {
+    padding: $toast-padding-x; // apply to both vertical and horizontal
+    padding-bottom: $toast-padding-y;
+    padding-top:$toast-font-size/2;
+}

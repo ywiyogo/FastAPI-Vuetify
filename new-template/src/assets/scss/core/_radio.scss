@@ -1,0 +1,103 @@
+.radio {
+    input[type='radio']{
+        position:absolute;
+        opacity: 0;
+        z-index: -9999;
+
+        & + label{
+            position: relative;
+            margin:0;
+            // Aligns text and checkbox in middle of main axis
+            display: flex;
+            align-items: center;
+
+            // Min height is required to make sure that when checkbox is without text the label box is sized to fit the checkbox
+            min-height: $checkbox-size;
+
+            .indicator{
+                display: block;
+                position: absolute;
+                transition: all 0.2s ease-in;
+                width: $checkbox-size;
+                height: $checkbox-size;
+                background-color: #fff;
+                border: 1px solid $input-border-color;
+                cursor: pointer;
+                border-radius: 50%;
+
+
+                &::before{
+                    transition: transform #{$checkbox-tick-transition};
+                    content: '';
+                    transform: scale(0);
+                }
+
+                &:hover{
+                    background-color: change_color($checkbox-color, $lightness: 90%);
+                    border-color: change_color($checkbox-color, $lightness: 85%);
+                }
+            }
+
+            .label-text{
+                margin-left: calc(#{$checkbox-size} + 0.35rem);
+            }
+        }
+
+        // Checked checkbox styles
+        &:checked + label .indicator{
+            background-color: #fff;
+            border-color: $checkbox-color;
+            border-radius: 50%;
+            outline: none;
+            border-width: $checkbox-size*0.1;
+
+            // Center circle
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::before {
+                border: none;
+                transform: initial;
+                background-color: $checkbox-color;
+                width: $checkbox-size/3;
+                height: $checkbox-size/3;
+                border-radius: 50%;
+                display: block;
+                content: '';
+                position: static;
+            }
+        }
+
+        // Clicking on checkbox styles
+        &:active + label .indicator{
+            border-color: change_color($checkbox-color, $lightness:80%);
+            &::before{
+                background-color: change_color($checkbox-color, $lightness:80%);
+            }
+        }
+
+        // Focus styles
+        &:focus + label .indicator{
+            outline:none;
+            box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.25), 0px 0px 0px 3px change_color($checkbox-color, $lightness:80%);
+        }
+
+
+        // Disabled checkbox styles
+        &:disabled + label .indicator{
+            background-color: $gray-400 !important;
+            // Border must persist because of box-sizing: border-box
+            border-color: $gray-400 !important;
+
+            // Remove effects of focus,hover and active
+            box-shadow: none !important;
+
+            &::before {
+                background-color: $gray-200 !important;;
+            }
+        }
+
+
+    }
+}
